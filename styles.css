@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff00ff, #6a00ff, #0000ff, #ff0080);
+    background-size: 400% 400%;
+    animation: smoothGradient 20s ease infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    width: 80%;
+}
+
+.instruction-box {
+    width: 30%;
+    padding: 20px;
+    background-color: #f7f9fc;
+    border-radius: 10px;
+    margin-right: 20px;
+    position: relative;
+    z-index: 2;
+    height: 400px; 
+    overflow: auto; 
+}
+
+.instruction-box h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.instruction-box ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.instruction-box li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.app-container {
+    width: 70%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.todo-container {
+    position: relative;
+}
+
+.input-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input[type="text"] {
+    width: 75%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    outline: none;
+}
+
+#add-task-btn {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#add-task-btn:hover {
+    background-color: #0056b3;
+}
+
+#task-list {
+    list-style: none;
+    margin-top: 20px;
+    padding: 0;
+    max-height: 300px; 
+    overflow-y: auto; 
+}
+
+
+#task-list li {
+    background-color: #f7f9fc;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-left: 5px solid #007bff;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+#task-list li.done {
+    text-decoration: line-through;
+    opacity: 0.6;
+    border-left-color: #28a745;
+}
+
+.task {
+    font-size: 1rem;
+    color: #333;
+}
+
+.delete-btn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: #ff1a1a;
+}
+
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .instruction-box {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .app-container {
+        width: 90%;
+    }
+
+    input[type="text"] {
+        width: 65%;
+    }
+}
+
+@keyframes smoothGradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(/png/sugar_5940015.png),
+                     url(/png/phone-call.png),
+                     url(/png/pedestrian-crossing_4173013.png),
+                     url(/png/conversation_1358039.png),
+                     url(/png/home.png),
+                     url(/png/sugar_5940015.png),
+                     url(/png/sugar_5940015.png),
+                     url(/png/sugar_5940015.png),
+                     url(/png/sugar_5940015.png),
+                     url(/png/pedestrian-crossing_4173013.png),
+                     url(/png/home.png),
+                     url(/png/phone-call.png),
+                     url(/png/home.png),
+                     url(/png/pedestrian-crossing_4173013.png),
+                     url(/png/phone-call.png),
+                     url(/png/home.png),
+                     url(/png/sugar_5940015.png),
+                     url(/png/sugar_5940015.png),
+                     url(/png/pedestrian-crossing_4173013.png),
+                     url(/png/phone-call.png);
+    background-repeat: no-repeat;
+    background-position: 10% 5%, 70% 5%, 30% 10%, 80% 10%, 15% 15%, 85% 15%, 20% 5%, 75% 20%, 60% 5%, 40% 15%, 5% 30%, 90% 30%, 25% 25%, 65% 25%, 50% 35%, 35% 40%, 5% 70%, 90% 70%, 20% 80%, 80% 80%;
+ background-size: 50px;
+    opacity: 0.3;
+    z-index: 1;
+}
+
+.app-container {
+    z-index: 2;
+    position: relative;
+}
+
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 10px 0;
+    font-size: 1rem;
+    z-index: 3; 
+}
+
+footer p {
+    margin: 0;
+}
+
